@@ -11,17 +11,6 @@
 </head>
 <body style="padding: 5px;">
 	
-	<h3>六、配置用户名和邮箱地址(git是分布式的，所以每个机器都必须自报家门)</h3>
-	<p>$ git config --global user.name 'name'<br/>
-	$ git config --global user.email test@hhh.com<br/>
-	--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址
-	</p>
-	<h3>七、git reset --hard HEAD^ 可以回退到上一版本，git checkout -- &lt;file&gt; 撤销修改</h3>
-	<p>
-	git reset --hard commit_id(十六进制的版本号)       //可以指定会到某一版本<br/>
-	Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针<br/>
-	Git提供了一个命令git reflog用来记录你的每一次命令<br/>
-	</p>
 	<p>git checkout -- &lt;file&gt;可以丢弃工作区的修改可以删掉最后一行，手动把文件恢复到上一个版本的状态。<br/>
 	git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：这里有两种情况：<br/>
 	一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br/>
