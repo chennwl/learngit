@@ -51,7 +51,23 @@
 `--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址`
 
 ***
-### 七、git reset --hard HEAD^ 可以回退到上一版本，git checkout -- <file>撤销修改  
+### 七、git reset --hard HEAD^ 可以回退到上一版本，`git checkout -- <file>`撤销修改  
 `git reset --hard commit_id(十六进制的版本号)       //可以指定会到某一版本`  
 Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针  
-Git提供了一个命令git reflog用来记录你的每一次命令
+Git提供了一个命令git reflog用来记录你的每一次命令  
+`git checkout -- <file>`可以丢弃工作区的修改可以删掉最后一行，手动把文件恢复到上一个版本的状态。  
+`git checkout -- readme.txt`意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：这里有两种情况：  
+1. 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态;
+2. 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。  
+**Tip: git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令，我们在后面的分支管理中会再次遇到git checkout命令。**
+
+***
+### 删除文件：  
+命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，git checkout -- file能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。  
+
+***
+### 远程仓库  
+1. 第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：ssh-keygen -t rsa -C "youremail@example.com";邮箱换成自己的邮箱。如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。  
+2. 第2步：登陆GitHub，打开“Account settings”，“SSH and GPG Keys”页面：然后，点“New SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容  
+为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。  
+当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。github上面的东西是公开看得到的，要想别人看不到，自己搭一个git服务器，公司内部开发必备。

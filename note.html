@@ -10,13 +10,6 @@
 	</style>
 </head>
 <body style="padding: 5px;">
-	
-	<p>git checkout -- &lt;file&gt;可以丢弃工作区的修改可以删掉最后一行，手动把文件恢复到上一个版本的状态。<br/>
-	git checkout -- readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：这里有两种情况：<br/>
-	一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br/>
-	一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
-	<div style="color: red"><strong>Tip: git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令，我们在后面的分支管理中会再次遇到git checkout命令。</strong></div>
-	</p>
 
 	<h3>删除文件：命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，git checkout -- file能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</h3>
 
