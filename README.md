@@ -72,7 +72,9 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。  
 当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。github上面的东西是公开看得到的，要想别人看不到，自己搭一个git服务器，公司内部开发必备。  
 #### 添加远程库  
-**先有本地库，后有远程库的时候，如何关联远程库**  
-1. 在本地仓库运行命令`git remote add origin git@github.com:williamChann/learngit.git`可将本地库与github上面的远程仓库相关联。添加后，远程库的名字就是`origin`，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。  
-2. 把本地库的所有内容推送到远程库上:`git push -u origin master`。由于远程库是空的，第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令。  
-3. 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
++ 先有本地库，后有远程库的时候，如何关联远程库  
+- 在本地仓库运行命令`git remote add origin git@github.com:williamChann/learngit.git`可将本地库与github上面的远程仓库相关联。添加后，远程库的名字就是`origin`，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。  
+- 把本地库的所有内容推送到远程库上:`git push -u origin master`。由于远程库是空的，第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令。  
+- 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；  
+
+####假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆｀git clone git地址｀
