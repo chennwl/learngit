@@ -91,3 +91,5 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 - 创建和切换分支:`git checkout -b <name>`
 - 合并某分支到当前分支:`git merge <name>`
 - 删除分支:`git branch -d <name>`
+
+Creating a new branch is quick & simple.
