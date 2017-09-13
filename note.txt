@@ -1,0 +1,2 @@
+vi <fileName>  可以在shell编辑某个文件,编辑完成后可连按两次Z退出
+cat <fileName> 可以在shell查看某个文件
