@@ -83,4 +83,7 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 ####创建和合并分支  
 1. 创建`dev`分支，然后切换到`dev`分支: `git checkout -b dev`(git checkout命令加上-b参数表示创建并切换 = `git branch dev` `git checkout dev`);
 2. 用`git branch`命令查看当前分支:当前分支前面会标一个`*`号
-3. s s s
+**总结**
+- 查看分支:`git branch`
+- 创建分支:`git branch <name>`
+	
