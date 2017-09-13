@@ -83,7 +83,11 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 ####创建和合并分支  
 1. 创建`dev`分支，然后切换到`dev`分支: `git checkout -b dev`(git checkout命令加上-b参数表示创建并切换 = `git branch dev` `git checkout dev`);
 2. 用`git branch`命令查看当前分支:当前分支前面会标一个`*`号
+3. 可以在`dev`分支上面做修改提交，但是切回到`master`分支的时候，修改的内容会不见的，因为刚才的提交是在`dev`分支上，`master`的提交点没有变，这时候就可以合并两个分支了。
 **总结**
 - 查看分支:`git branch`
 - 创建分支:`git branch <name>`
-	
+- 切换分支:`git checkout <name>`
+- 创建和切换分支:`git checkout -b <name>`
+- 合并某分支到当前分支:`git merge <name>`
+- 删除分支:`git branch -d <name>`
