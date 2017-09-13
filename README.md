@@ -26,8 +26,8 @@
 + 暂存区：Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
 ***
 ### 五、创建仓库和常用git命令
-**git init：**初始化一个git仓库，Git的很多命令都需要在Git的仓库中运行。可以使用一个已经存在的目录作为Git仓库。在执行命令完成后，Git仓库会生成一个.git目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（Git只在仓库的根目录生成.git目录）。  
-**git init newrepo：**初始化后，会在newrepo目录下会出现一个名为.git的目录，所有Git需要的数据和资源都存放在这个目录中。
+git init：初始化一个git仓库，Git的很多命令都需要在Git的仓库中运行。可以使用一个已经存在的目录作为Git仓库。在执行命令完成后，Git仓库会生成一个.git目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（Git只在仓库的根目录生成.git目录）。  
+git init newrepo：初始化后，会在newrepo目录下会出现一个名为.git的目录，所有Git需要的数据和资源都存放在这个目录中。
 如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：  
 `git add *.c        //将以.c结尾的文件提交到仓库`  
 `git add README     //将README文件提交到仓库`  
@@ -52,7 +52,7 @@
 
 ***
 ### 七、git reset --hard HEAD^ 可以回退到上一版本，`git checkout -- <file>`撤销修改  
-｀git log --pretty=oneline    //可以查看版本号｀  
+`git log --pretty=oneline       //可以查看历史纪录的版本号`  
 `git reset --hard commit_id(十六进制的版本号)       //可以指定会到某一版本`  
 Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针  
 Git提供了一个命令git reflog用来记录你的每一次命令  
@@ -80,4 +80,7 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 
 ####假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆｀git clone git地址｀  
 ###分支管理  
-####创建和合并分支
+####创建和合并分支  
+1. 创建`dev`分支，然后切换到`dev`分支: `git checkout -b dev`(git checkout命令加上-b参数表示创建并切换 = `git branch dev` `git checkout dev`);
+2. 用`git branch`命令查看当前分支:当前分支前面会标一个`*`号
+3. s s s
