@@ -46,9 +46,9 @@
 
 ***
 ### 六、配置用户名和邮箱地址(git是分布式的，所以每个机器都必须自报家门)  
-`$ git config --global user.name 'name'`  
-`$ git config --global user.email test@hhh.com`  
-`--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址`
+```$ git config --global user.name 'name'
+$ git config --global user.email test@hhh.com
+--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址```
 
 ***
 ### 七、git reset --hard HEAD^ 可以回退到上一版本，`git checkout -- <file>`撤销修改  
@@ -77,4 +77,7 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 - 把本地库的所有内容推送到远程库上:`git push -u origin master`。由于远程库是空的，第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令。  
 - 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；  
 
-####假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆｀git clone git地址｀
+####假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆｀git clone git地址｀  
+###分支管理  
+####创建和合并分支  
+
