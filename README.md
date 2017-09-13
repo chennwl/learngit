@@ -103,3 +103,6 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 而合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并。例如`git merge --no-ff -m "merge with no-ff" dev`，因为本次合并要创建一个新的commit，所以加上`-m`参数，把描述写进去。而fast forward合并就看不出来曾经做过合并。
 	
 #### Bug分支
+- 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+- 当手头工作没有完成时，先把工作现场`git stash`一下，然后去修复bug，修复后，再`git stash pop`，回到工作现场。
+- 参考BUG分支(https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137602359178794d966923e5c4134bc8bf98dfb03aea3000)
