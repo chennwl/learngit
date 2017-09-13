@@ -45,8 +45,8 @@ git init newrepo：初始化后，会在newrepo目录下会出现一个名为.gi
 
 ***
 ### 六、配置用户名和邮箱地址(git是分布式的，所以每个机器都必须自报家门)  
-`$ git config --global user.name 'name'`  
-`$ git config --global user.email test@hhh.com`  
+`$ git config --global user.name "name"`  
+`$ git config --global user.email "test@hhh.com"`  
 `--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址`
 
 ***
