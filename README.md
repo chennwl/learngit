@@ -92,4 +92,5 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 - 合并某分支到当前分支:`git merge <name>`
 - 删除分支:`git branch -d <name>`
 
+#### 解决冲突
 Creating a new branch is quick & simple.
