@@ -46,16 +46,17 @@
 
 ***
 ### 六、配置用户名和邮箱地址(git是分布式的，所以每个机器都必须自报家门)  
-`$ git config --global user.name 'name'`
-`$ git config --global user.email test@hhh.com`
-`--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址``
+`$ git config --global user.name 'name'`  
+`$ git config --global user.email test@hhh.com`  
+`--global表示这台机器上所有Git仓库都会使用这个配置,当然也可以对某个仓库指定不同的用户名和Email地址`
 
 ***
 ### 七、git reset --hard HEAD^ 可以回退到上一版本，`git checkout -- <file>`撤销修改  
+｀git log --pretty=oneline    //可以查看版本号｀  
 `git reset --hard commit_id(十六进制的版本号)       //可以指定会到某一版本`  
 Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针  
 Git提供了一个命令git reflog用来记录你的每一次命令  
-`git checkout -- <file>`可以丢弃工作区的修改可以删掉最后一行，手动把文件恢复到上一个版本的状态。  
+`git checkout -- <file>`可以丢弃工作区的修改，手动把文件恢复到上一个版本的状态。  
 `git checkout -- readme.txt`意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：这里有两种情况：  
 1. 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态;
 2. 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。  
@@ -79,5 +80,4 @@ Git提供了一个命令git reflog用来记录你的每一次命令
 
 ####假设我们从零开发，那么最好的方式是先创建远程库，然后，从远程库克隆｀git clone git地址｀  
 ###分支管理  
-####创建和合并分支  
-
+####创建和合并分支
