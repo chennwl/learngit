@@ -15,8 +15,8 @@ categories: 学习
 5. GIT的内容完整性要优于SVN：GIT的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。  
 
 #### 集中式和分布式的区别  
-**集中式(svn,cvs) －－ 集中式版本控制系统**，工作前都需要把最新代码从中央库 Pull 下来。工作完成然后再 Push 到中央库中，意味着必须联网。受网络限制，并且不安全
-**分布式** －－ 分布式版本控制系统根本没有“中央服务器”，每一台终端都是一个中央服务器。代码保存在本地，十分灵活。 
+- **集中式(svn,cvs) －－ 集中式版本控制系统**，工作前都需要把最新代码从中央库 Pull 下来。工作完成然后再 Push 到中央库中，意味着必须联网。受网络限制，并且不安全
+- **分布式** －－ 分布式版本控制系统根本没有“中央服务器”，每一台终端都是一个中央服务器。代码保存在本地，十分灵活。 
 ***
 ## 二、工作区、暂存区和版本库
 + 工作区：就是你在电脑里能看到的目录。
@@ -50,14 +50,14 @@ categories: 学习
 
 ***
 ## 五、git reset --hard HEAD^ 可以回退到上一版本，`git checkout -- <file>`撤销修改  
-`git log --pretty=oneline       //可以查看历史纪录的版本号`  
-`git reset --hard commit_id(十六进制的版本号)       //可以指定会到某一版本`  
-Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针  
-Git提供了一个命令`git reflog`用来记录你的每一次命令  
-`git checkout -- <file>`可以丢弃工作区的修改，手动把文件恢复到上一个版本的状态。  
-`git checkout -- readme.txt`意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：这里有两种情况：  
-1. 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态;
-2. 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。  
+- `git log --pretty=oneline       //可以查看历史纪录的版本号`  
+- `git reset --hard commit_id(十六进制的版本号)       //可以指定会到某一版本`  
+- Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针  
+- Git提供了一个命令`git reflog`用来记录你的每一次命令  
+- `git checkout -- <file>`可以丢弃工作区的修改，手动把文件恢复到上一个版本的状态。  
+- `git checkout -- readme.txt`意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：这里有两种情况：  
+    1. 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态;
+    2. 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。  
 **Tip: git checkout -- file命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令**
 
 ***
@@ -66,9 +66,13 @@ Git提供了一个命令`git reflog`用来记录你的每一次命令
 
 ***
 ## 远程仓库  
-1. 第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：`ssh-keygen -t rsa -C "youremail@example.com"`，邮箱换成自己的邮箱。如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。  
-2. 第2步：登陆GitHub，打开“Account settings”，“SSH and GPG Keys”页面：然后，点“New SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容  
+1. 第1步：创建SSH Key。
+    - 在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。
+    - 如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：`ssh-keygen -t rsa -C "youremail@example.com"`，邮箱换成自己的邮箱。如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。  
+2. 第2步：登陆GitHub，打开“Account settings”，“SSH and GPG Keys”页面：然后，点“New SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。
+
 **为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。**
+
 当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了。github上面的东西是公开看得到的，要想别人看不到，自己搭一个git服务器，公司内部开发必备。  
 
 #### 添加远程库  
