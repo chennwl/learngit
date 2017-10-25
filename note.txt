@@ -2,7 +2,7 @@ vi <fileName>  可以在shell编辑某个文件,编辑完成后可连按两次Z�
 cat <fileName> 可以在shell查看某个文件
 
 在window下git push不需要每次都输入用户名和密码：采用ssh方式传输，不要用https方式传输
-git remote rm origin
+git remote rm origin    //移除origin这个名称
 git remote add origin git@github.com:username/repository.git        //repository是仓库名
-git push -u origin master
+git push -u origin master	一开始第一次推送master分支时，加上了’-u’参数
 只有clone项目的时候使用了http而非git才会每次都要输入用户名和密码
