@@ -109,8 +109,9 @@ categories: 学习
 	
 #### Bug分支
 - 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
-- 当手头工作没有完成时，先把工作现场`git stash`一下，然后去修复bug，修复后，再`git stash pop`，回到工作现场。
-- 还有一种恢复方法是是用`git stash apply`恢复，但是恢复后，stash内容并不删除，需要用`git stash drop`来删除；
+- 当手头工作没有完成时，先把工作现场`git stash`一下，然后去修复bug，修复后，再`git stash pop`，回到工作现场同时删除该储藏。eg:`git stash pop stash@{1}，可以恢复指定版本号为stash@{1}的工作现场
+- 还有一种恢复方法是是用`git stash apply`恢复，但是恢复后，stash内容并不删除，需要用`git stash drop`来删除；eg:`git stash pop stash@{0}`，可以删除指定版本号为stash@{0}的储藏
+- `git stash list`，可以将当前的Git栈信息打印出来
 - [参考BUG分支](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137602359178794d966923e5c4134bc8bf98dfb03aea3000)
 
 #### Feature分支
