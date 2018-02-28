@@ -30,7 +30,7 @@ categories: 学习
     - `git add *.c        //将以.c结尾的文件提交到仓库`  
     - `git add README     //将README文件提交到仓库`  
     - `git commit -m '初始化项目版本'`
-    -  `git clone <repo> <directory>    //将远程Git仓库克隆到指定的目录 repo:Git仓库 directory:本地目录`   
+    - `git clone <repo> <directory>    //将远程Git仓库克隆到指定的目录 repo:Git仓库 directory:本地目录`   
     - **默认情况下，Git 会按照你提供的 URL 所指示的项目的名称创建你的本地项目目录，通常就是该 URL 最后一个 / 之后的项目名称。如果你想要一个不一样的名字，你可以在该命令后加上你想要的名称。**  
 
 `mkdir html                  //可以创建一个html的文件夹`  
